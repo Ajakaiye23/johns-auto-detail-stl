@@ -400,7 +400,7 @@ window.addEventListener('load',function(){
   if(hasG)gsap.registerPlugin(ScrollTrigger);
   var bar=document.createElement('div');bar.className='fx-bar';document.body.appendChild(bar);
   var lenis=null;
-  if(window.Lenis){
+  if(false){/* Lenis disabled - native scroll */
     lenis=new Lenis({lerp:0.1,smoothWheel:true,smoothTouch:false,wheelMultiplier:1});window.__lenis=lenis;
     if(hasG){lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0);}
     else{(function r(t){lenis.raf(t);requestAnimationFrame(r);})();}
