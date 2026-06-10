@@ -151,6 +151,46 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
   <div class="it"><div class="n">100%</div><div class="l">Satisfaction</div></div>
 </div>
 
+<style>
+.story{position:relative;height:580vh;background:#080a0e;padding:0}
+.story-pin{position:sticky;top:0;height:100vh;overflow:hidden}
+#jdStoryCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.story-veil{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse at 30% 60%,transparent 36%,rgba(4,6,10,.74) 100%)}
+.story-wrap{position:absolute;inset:0;z-index:3;display:flex;align-items:center}
+.story-wrap .inner{max-width:1200px;margin:0 auto;padding:0 2.4rem;width:100%;position:relative}
+.sbeat{position:absolute;max-width:560px;opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.sbeat.in{opacity:1;transform:none}
+.sbeat .bk{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:4px;text-transform:uppercase;color:#2f9bff;margin-bottom:.8rem}
+.sbeat h2{font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(2.8rem,7vw,6rem);line-height:.92;color:#e9eef5;letter-spacing:.5px}
+.sbeat h2 span{color:#2f9bff}
+.sbeat p{font-size:1.05rem;color:#8893a4;margin-top:1.1rem;line-height:1.65;max-width:430px}
+.sbrail{position:absolute;left:2.2rem;top:50%;transform:translateY(-50%);z-index:4;display:flex;flex-direction:column;gap:13px}
+.sbrail i{width:8px;height:8px;border-radius:50%;background:rgba(233,238,245,.22);transition:all .3s;display:block}
+.sbrail i.on{background:#2f9bff;transform:scale(1.4);box-shadow:0 0 10px #2f9bff}
+@media(max-width:860px){
+  .story{height:auto}
+  .story-pin{position:relative;height:auto;overflow:visible}
+  #jdStoryCanvas{position:relative;width:100%;height:58vh;background:radial-gradient(circle at 50% 45%,#11161f,#070a0e)}
+  .story-veil,.sbrail{display:none}
+  .story-wrap{position:relative;display:block}
+  .story-wrap .inner{padding:2.4rem 1.6rem}
+  .sbeat{position:relative;opacity:1;transform:none;max-width:none;padding:1.5rem 0;border-top:1px solid rgba(47,155,255,.25)}
+}
+</style>
+<section class="story" id="story">
+  <div class="story-pin">
+    <canvas id="jdStoryCanvas"></canvas>
+    <div class="story-veil"></div>
+    <div class="sbrail"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+    <div class="story-wrap"><div class="inner">
+      <div class="sbeat in"><div class="bk">The Detail &middot; 01</div><h2>Drop it <span>off.</span></h2><p>Daily driver, road grime, swirl marks and all. We've seen worse &mdash; bring it in.</p></div>
+      <div class="sbeat"><div class="bk">The Detail &middot; 02</div><h2>Hand wash &amp; <span>decon.</span></h2><p>Two-bucket wash, clay bar, every panel done by hand. No automatic brushes, ever.</p></div>
+      <div class="sbeat"><div class="bk">The Detail &middot; 03</div><h2>Paint <span>correction.</span></h2><p>We machine-polish out the swirls and bring the real depth of the color back.</p></div>
+      <div class="sbeat"><div class="bk">The Detail &middot; 04</div><h2>Ceramic <span>coating.</span></h2><p>A glass-hard layer that beads water and protects the finish for years.</p></div>
+      <div class="sbeat"><div class="bk">The Detail &middot; 05</div><h2>Like new. <span>Better.</span></h2><p>Mirror finish, fresh interior, lights on. Ready to turn heads.</p></div>
+    </div></div>
+  </div>
+</section>
 <section id="services"><div class="wrap">
   <div class="head"><div class="k">What We Do</div><h2>Detailing, done right</h2><p>Every package is hand-done with pro-grade products — no rushed tunnel washes here.</p></div>
   <div class="svc-grid">
@@ -288,6 +328,72 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+window.addEventListener('load',function(){
+  if(!window.THREE)return;
+  var canvas=document.getElementById('jdStoryCanvas');if(!canvas)return;
+  var isMobile=window.matchMedia('(max-width:860px)').matches;
+  try{var _t=document.createElement('canvas');if(!(_t.getContext('webgl')||_t.getContext('experimental-webgl')))return;}catch(e){return;}
+  function size(){return {w:canvas.clientWidth||canvas.offsetWidth||800,h:canvas.clientHeight||canvas.offsetHeight||600};}
+  var d=size();
+  var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:!isMobile});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,isMobile?1.3:2));renderer.setSize(d.w,d.h,false);renderer.setClearColor(0x080a0e,1);
+  if('outputColorSpace' in renderer)renderer.outputColorSpace=THREE.SRGBColorSpace;
+  renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
+  var scene=new THREE.Scene();scene.fog=new THREE.Fog(0x080a0e,16,46);
+  var cam=new THREE.PerspectiveCamera(40,d.w/d.h,0.1,160);
+  (function(){var c=document.createElement('canvas');c.width=32;c.height=256;var g=c.getContext('2d');var gr=g.createLinearGradient(0,0,0,256);gr.addColorStop(0,'#aeb9c8');gr.addColorStop(0.4,'#1a2330');gr.addColorStop(0.5,'#dfe7f2');gr.addColorStop(0.6,'#10161f');gr.addColorStop(1,'#05080c');g.fillStyle=gr;g.fillRect(0,0,32,256);g.fillStyle='rgba(47,155,255,0.6)';g.fillRect(0,110,32,14);var tex=new THREE.CanvasTexture(c);tex.mapping=THREE.EquirectangularReflectionMapping;var pm=new THREE.PMREMGenerator(renderer);pm.compileEquirectangularShader();scene.environment=pm.fromEquirectangular(tex).texture;tex.dispose();pm.dispose();})();
+  var key=new THREE.DirectionalLight(0xffffff,1.5);key.position.set(-7,10,6);scene.add(key);
+  var blue=new THREE.PointLight(0x2f9bff,2.2,60);blue.position.set(6,3,5);scene.add(blue);
+  var fill=new THREE.DirectionalLight(0x9fc0ff,0.5);fill.position.set(8,-2,-5);scene.add(fill);
+  scene.add(new THREE.AmbientLight(0x1a2230,0.7));
+  var floor=new THREE.Mesh(new THREE.CircleGeometry(16,64),new THREE.MeshStandardMaterial({color:0x0a0d12,metalness:0.9,roughness:0.28,envMapIntensity:1.0}));floor.rotation.x=-Math.PI/2;floor.position.y=-0.02;scene.add(floor);
+  var car=new THREE.Group();
+  var paint=new THREE.MeshStandardMaterial({color:0x1f6fd0,metalness:0.85,roughness:0.85,envMapIntensity:1.6});
+  var glassMat=new THREE.MeshStandardMaterial({color:0x0c141f,metalness:0.4,roughness:0.15,envMapIntensity:1.6});
+  var chrome=new THREE.MeshStandardMaterial({color:0xc4ccd6,metalness:0.98,roughness:0.12,envMapIntensity:2.2});
+  var tire=new THREE.MeshStandardMaterial({color:0x14161a,roughness:0.85,metalness:0.1});
+  var lower=new THREE.Mesh(new THREE.BoxGeometry(4.6,0.72,2.0,2,1,1),paint);lower.position.y=0.62;lower.castShadow=true;car.add(lower);
+  var mid=new THREE.Mesh(new THREE.BoxGeometry(4.1,0.5,1.92),paint);mid.position.y=1.06;car.add(mid);
+  var cabin=new THREE.Mesh(new THREE.BoxGeometry(2.3,0.72,1.66),paint);cabin.position.set(-0.15,1.5,0);car.add(cabin);
+  var glass=new THREE.Mesh(new THREE.BoxGeometry(2.05,0.56,1.7),glassMat);glass.position.set(-0.15,1.52,0);car.add(glass);
+  function wheel(x,z){var g=new THREE.Group();var w=new THREE.Mesh(new THREE.CylinderGeometry(0.52,0.52,0.36,24),tire);w.rotation.x=Math.PI/2;g.add(w);var hub=new THREE.Mesh(new THREE.CylinderGeometry(0.27,0.27,0.38,18),chrome);hub.rotation.x=Math.PI/2;g.add(hub);g.position.set(x,0.5,z);return g;}
+  car.add(wheel(1.5,0.96));car.add(wheel(1.5,-0.96));car.add(wheel(-1.5,0.96));car.add(wheel(-1.5,-0.96));
+  var hl=new THREE.MeshStandardMaterial({color:0xdfe9ff,emissive:0xbcd6ff,emissiveIntensity:0.0});
+  var tl=new THREE.MeshStandardMaterial({color:0x3a0a0a,emissive:0xff2222,emissiveIntensity:0.0});
+  var h1=new THREE.Mesh(new THREE.BoxGeometry(0.12,0.3,0.45),hl);h1.position.set(2.32,0.8,0.6);car.add(h1);
+  var h2=new THREE.Mesh(new THREE.BoxGeometry(0.12,0.3,0.45),hl);h2.position.set(2.32,0.8,-0.6);car.add(h2);
+  var r1=new THREE.Mesh(new THREE.BoxGeometry(0.1,0.26,0.5),tl);r1.position.set(-2.32,0.85,0.6);car.add(r1);
+  var r2=new THREE.Mesh(new THREE.BoxGeometry(0.1,0.26,0.5),tl);r2.position.set(-2.32,0.85,-0.6);car.add(r2);
+  scene.add(car);
+  function ss(a,b,x){x=(x-a)/(b-a);x=Math.max(0,Math.min(1,x));return x*x*(3-2*x);}
+  function lerp(a,b,t){return a+(b-a)*t;}
+  function applyCam(p){var ang=-0.6+p*2.1;var cz=lerp(7,11.5,ss(0,1,p));var cy=lerp(1.2,3.4,ss(0,1,p));cam.position.set(Math.sin(ang)*cz,cy,Math.cos(ang)*cz);cam.lookAt(0,0.9,0);}
+  var prog=0;
+  if(window.gsap&&window.ScrollTrigger&&!isMobile){
+    gsap.registerPlugin(ScrollTrigger);
+    var dots=document.querySelectorAll('.sbrail i'),beats=document.querySelectorAll('.sbeat');
+    ScrollTrigger.create({trigger:'.story',start:'top top',end:'bottom bottom',pin:'.story-pin',scrub:0.6,anticipatePin:1,invalidateOnRefresh:true,
+      onUpdate:function(self){prog=self.progress;var idx=Math.min(4,Math.floor(self.progress*5));
+        beats.forEach(function(b,i){b.classList.toggle('in',i===idx);});
+        dots.forEach(function(dt,i){dt.classList.toggle('on',i===idx);});}});
+    setTimeout(function(){ScrollTrigger.refresh();},500);
+  }
+  var vis=true;if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting;},{threshold:0.01}).observe(canvas);
+  var t0=performance.now();
+  function render(){requestAnimationFrame(render);if(!vis)return;
+    var tt=(performance.now()-t0)/1000;var p=prog;if(isMobile){p=((tt)%16)/16;}
+    var gloss=ss(0.15,0.85,p);
+    paint.roughness=lerp(0.85,0.06,gloss);paint.envMapIntensity=lerp(1.2,2.6,gloss);
+    floor.material.roughness=lerp(0.4,0.18,gloss);
+    var lit=ss(0.82,1,p);hl.emissiveIntensity=lit*2.2;tl.emissiveIntensity=lit*1.6;blue.intensity=2.0+lit*1.8;
+    car.rotation.y=Math.sin(p*0.5)*0.05;
+    applyCam(p);renderer.render(scene,cam);}
+  addEventListener('resize',function(){var z=size();renderer.setSize(z.w,z.h,false);cam.aspect=z.w/z.h;cam.updateProjectionMatrix();},{passive:true});
+  render();
+});
+</script>
+
 <script>
 window.addEventListener('load',function(){
   var hasG=window.gsap&&window.ScrollTrigger;
