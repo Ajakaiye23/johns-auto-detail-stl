@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John's Auto Detail | Wentzville &amp; St. Charles, MO</title>
+<meta name="description" content="John's Auto Detail — premium hand wash, full interior &amp; exterior detailing, paint correction and ceramic coating in Wentzville and St. Charles, MO. Mobile service available. (636) 498-0038.">
+<meta name="keywords" content="auto detailing Wentzville MO, car detailing St. Charles, ceramic coating, paint correction, interior detail, mobile detailing">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0c10">
+<link rel="canonical" href="https://johns-auto-detail-stl.netlify.app/">
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="John's Auto Detail | Wentzville &amp; St. Charles, MO">
+<meta property="og:description" content="Premium detailing, paint correction & ceramic coating. Mobile service available.">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0c10;--bg2:#0f131a;--panel:#141922;--line:rgba(255,255,255,.09);--ice:#e9eef5;--mut:#8893a4;--blue:#2f9bff;--blue2:#5cb2ff;--chrome:#c4ccd6}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ice);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6}
+.wrap{max-width:1200px;margin:0 auto;padding:0 1.8rem}
+.saira{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:1px}
+a{color:inherit;text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:1rem;padding:.8rem 1.8rem;border-radius:6px;cursor:pointer;border:none;transition:all .2s}
+.btn-b{background:var(--blue);color:#06121f;box-shadow:0 8px 26px rgba(47,155,255,.32)}
+.btn-b:hover{background:var(--blue2);transform:translateY(-2px)}
+.btn-g{background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--ice)}
+.btn-g:hover{border-color:var(--blue);color:var(--blue)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;display:flex;align-items:center;background:rgba(10,12,16,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
+.logo{font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:1px}
+.logo b{color:var(--blue)}
+.nav-links{display:flex;gap:1.9rem;list-style:none}
+.nav-links a{font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--mut)}
+.nav-links a:hover{color:var(--ice)}
+
+/* HERO cinematic */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+#carCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.hero-glow{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:80%;height:60%;background:radial-gradient(ellipse,rgba(47,155,255,.18),transparent 65%);z-index:0;filter:blur(10px)}
+.hero-inner{position:relative;z-index:3;width:100%;text-align:center;padding-top:4rem}
+.hk{font-family:'Saira Condensed';font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--blue);font-size:.9rem;margin-bottom:1rem}
+.hero h1{font-family:'Saira Condensed';font-weight:800;text-transform:uppercase;font-size:clamp(3.2rem,9vw,7.5rem);line-height:.86;letter-spacing:1px}
+.hero h1 .b{color:var(--blue)}
+.hero p{color:var(--mut);max-width:520px;margin:1.4rem auto 2rem;font-size:1.08rem}
+.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero-scroll{position:absolute;bottom:1.4rem;left:50%;transform:translateX(-50%);z-index:3;color:var(--mut);font-size:.72rem;letter-spacing:3px;text-transform:uppercase}
+
+/* trust strip */
+.trust{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;padding:2.2rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.trust .it{text-align:center}
+.trust .n{font-family:'Saira Condensed';font-weight:800;font-size:2rem;color:var(--ice);line-height:1}
+.trust .l{font-size:.74rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--mut);margin-top:.2rem}
+
+section{padding:6rem 0}
+.head{text-align:center;max-width:680px;margin:0 auto 3rem}
+.head .k{font-family:'Saira Condensed';font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--blue);font-size:.85rem}
+.head h2{font-family:'Saira Condensed';font-weight:800;text-transform:uppercase;font-size:clamp(2.2rem,5vw,3.6rem);line-height:.95;margin-top:.4rem}
+.head p{color:var(--mut);margin-top:.8rem}
+
+/* services grid */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.svc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.8rem;transition:transform .25s,border-color .25s}
+.svc:hover{transform:translateY(-5px);border-color:rgba(47,155,255,.5)}
+.svc .ic{font-size:1.8rem;margin-bottom:.8rem}
+.svc h3{font-family:'Saira Condensed';font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:1.3rem;margin-bottom:.4rem}
+.svc p{color:var(--mut);font-size:.9rem}
+
+/* packages */
+.pkgs{background:var(--bg2)}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.pkg{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:2.2rem 1.8rem;position:relative}
+.pkg.feat{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue),0 20px 50px rgba(47,155,255,.18)}
+.pkg .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:#06121f;font-family:'Saira Condensed';font-weight:700;letter-spacing:1.5px;font-size:.72rem;padding:.25rem 1rem;border-radius:100px;text-transform:uppercase}
+.pkg .nm{font-family:'Saira Condensed';font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:1.4rem}
+.pkg .pr{font-family:'Saira Condensed';font-weight:800;font-size:2.6rem;margin:.4rem 0 1rem}
+.pkg .pr small{font-size:1rem;color:var(--mut)}
+.pkg ul{list-style:none;margin-bottom:1.6rem}
+.pkg li{padding:.45rem 0;border-bottom:1px solid var(--line);font-size:.9rem;color:#c3ccd8}
+.pkg li::before{content:'✓ ';color:var(--blue);font-weight:700}
+.pkg .btn{width:100%;justify-content:center}
+
+/* book band */
+.book{background:linear-gradient(135deg,#10233b,#0a0c10);}
+.book .grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.book h2{font-family:'Saira Condensed';font-weight:800;text-transform:uppercase;font-size:clamp(2.2rem,4.6vw,3.4rem);line-height:.95}
+.book p{color:var(--mut);margin-top:1rem}
+.book .phone{display:inline-block;margin-top:1.2rem;font-family:'Saira Condensed';font-weight:800;font-size:2rem;color:var(--blue);letter-spacing:1px}
+form{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;padding:2rem}
+.fg{margin-bottom:1rem}
+.fg label{display:block;font-size:.74rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--mut);margin-bottom:.4rem}
+.fg input,.fg select{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:8px;padding:.8rem 1rem;color:#fff;font-family:'Inter';font-size:.95rem;outline:none}
+.fg input:focus,.fg select:focus{border-color:var(--blue)}
+.fg select option{color:#000}
+form .btn{width:100%;justify-content:center;margin-top:.4rem}
+.done{display:none;text-align:center;padding:1.5rem}
+
+footer{border-top:1px solid var(--line);padding:2.4rem 0;color:var(--mut);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+
+@media(max-width:860px){.nav-links{display:none}.svc-grid,.pkg-grid{grid-template-columns:1fr}.book .grid{grid-template-columns:1fr}}
+</style>
+
+<style>
+.gallery{position:relative;background:#0f131a;color:#fff}
+.gallery-pin{height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.gallery-head{text-align:center;margin-bottom:1.6rem;padding:0 1.5rem}
+.gallery-head .gk{font-family:'Saira Condensed',sans-serif;letter-spacing:4px;text-transform:uppercase;color:#2f9bff;font-size:.85rem;font-weight:700}
+.gallery-head h2{font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1;color:#fff;margin-top:.3rem}
+.gallery-head p{color:rgba(255,255,255,.6);margin-top:.5rem;font-size:.95rem}
+.gallery-track{display:flex;gap:1.1rem;padding:0 2.2rem;will-change:transform}
+.gtile{flex:0 0 clamp(240px,30vw,420px);height:56vh;border-radius:18px;overflow:hidden;position:relative;box-shadow:0 24px 60px rgba(0,0,0,.45);background:#222}
+.gtile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.gtile:hover img{transform:scale(1.06)}
+.gtile .cap{position:absolute;left:0;right:0;bottom:0;padding:1.1rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,.78));color:#fff;font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:1px;font-weight:700;font-size:1.1rem}
+.gtile .cap span{display:block;font-family:'Inter';text-transform:none;letter-spacing:0;font-weight:400;font-size:.78rem;color:rgba(255,255,255,.7);margin-top:.15rem}
+@media(max-width:860px){.gallery-pin{height:auto;padding:4rem 0}.gallery-track{overflow-x:auto;padding-bottom:1rem;-webkit-overflow-scrolling:touch}.gtile{height:46vh;flex-basis:80vw}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">JOHN'S<b>·</b>AUTO DETAIL</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#book">Book</a></li>
+  </ul>
+  <a href="tel:6364980038" class="btn btn-b">(636) 498-0038</a>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-glow"></div>
+  <canvas id="carCanvas"></canvas>
+  <div class="hero-inner"><div class="wrap">
+    <div class="hk">Wentzville · St. Charles · Mobile</div>
+    <h1>That <span class="b">showroom</span><br>shine.</h1>
+    <p>John's Auto Detail brings dealership-level results to your driveway — hand washes, full interior &amp; exterior details, paint correction and ceramic coatings.</p>
+    <div class="hero-cta">
+      <a href="#book" class="btn btn-b">Book a Detail</a>
+      <a href="#packages" class="btn btn-g">See Packages</a>
+    </div>
+  </div></div>
+  <div class="hero-scroll">Scroll ↓</div>
+</header>
+
+<div class="trust">
+  <div class="it"><div class="n">5.0★</div><div class="l">Customer Rated</div></div>
+  <div class="it"><div class="n">Mobile</div><div class="l">We Come to You</div></div>
+  <div class="it"><div class="n">Ceramic</div><div class="l">Certified Coatings</div></div>
+  <div class="it"><div class="n">100%</div><div class="l">Satisfaction</div></div>
+</div>
+
+<section id="services"><div class="wrap">
+  <div class="head"><div class="k">What We Do</div><h2>Detailing, done right</h2><p>Every package is hand-done with pro-grade products — no rushed tunnel washes here.</p></div>
+  <div class="svc-grid">
+    <div class="svc"><div class="ic">🚙</div><h3>Hand Wash &amp; Wax</h3><p>Gentle two-bucket hand wash, dry and a carnauba wax that beads water and pops the paint.</p></div>
+    <div class="svc"><div class="ic">🧽</div><h3>Interior Detail</h3><p>Shampooed carpets &amp; seats, steamed vents, conditioned trim, glass and odor removal.</p></div>
+    <div class="svc"><div class="ic">✨</div><h3>Paint Correction</h3><p>Machine polish that cuts swirls, scratches and oxidation back to a mirror finish.</p></div>
+    <div class="svc"><div class="ic">🛡️</div><h3>Ceramic Coating</h3><p>Years of gloss and protection — hydrophobic, UV-resistant, easy to maintain.</p></div>
+    <div class="svc"><div class="ic">💡</div><h3>Headlight Restoration</h3><p>Foggy, yellow lenses sanded, polished and sealed clear for safer night driving.</p></div>
+    <div class="svc"><div class="ic">🚐</div><h3>Mobile Service</h3><p>We bring the water, power and gear to your home or office across the area.</p></div>
+  </div>
+</div></section>
+
+<section class="pkgs" id="packages"><div class="wrap">
+  <div class="head"><div class="k">Pick Your Level</div><h2>Detail Packages</h2></div>
+  <div class="pkg-grid">
+    <div class="pkg">
+      <div class="nm">Express Shine</div>
+      <div class="pr">$60</div>
+      <ul><li>Hand wash &amp; dry</li><li>Wheels &amp; tires dressed</li><li>Carnauba wax</li><li>Interior vacuum &amp; wipe</li></ul>
+      <a href="#book" class="btn btn-g">Book Express</a>
+    </div>
+    <div class="pkg feat">
+      <div class="tag">Most Popular</div>
+      <div class="nm">Full Detail</div>
+      <div class="pr">$200<small>+</small></div>
+      <ul><li>Everything in Express</li><li>Deep interior shampoo</li><li>Clay bar + sealant</li><li>Trim &amp; glass restored</li><li>Engine bay wipe-down</li></ul>
+      <a href="#book" class="btn btn-b">Book Full Detail</a>
+    </div>
+    <div class="pkg">
+      <div class="nm">Ceramic Pro</div>
+      <div class="pr">$600<small>+</small></div>
+      <ul><li>Full multi-stage detail</li><li>Paint correction</li><li>Ceramic coating</li><li>Years of protection</li></ul>
+      <a href="#book" class="btn btn-g">Get a Quote</a>
+    </div>
+  </div>
+</div></section>
+
+
+<section class="gallery" id="work">
+  <div class="gallery-pin">
+    <div class="gallery-head"><div class="gk">The Results</div><h2>Befores become afters</h2><p>Detailing work across Wentzville and St. Charles.</p></div>
+    <div class="gallery-track">
+      <div class="gtile"><img loading="lazy" src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80&auto=format&fit=crop" alt="Ceramic Gloss"><div class="cap">Ceramic Gloss<span>Mirror finish</span></div></div>
+      <div class="gtile"><img loading="lazy" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80&auto=format&fit=crop" alt="Paint Pop"><div class="cap">Paint Pop<span>Corrected and sealed</span></div></div>
+      <div class="gtile"><img loading="lazy" src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=800&q=80&auto=format&fit=crop" alt="Hand Wash"><div class="cap">Hand Wash<span>Two-bucket clean</span></div></div>
+      <div class="gtile"><img loading="lazy" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80&auto=format&fit=crop" alt="Showroom Ready"><div class="cap">Showroom Ready<span>Inside and out</span></div></div>
+      <div class="gtile"><img loading="lazy" src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&q=80&auto=format&fit=crop" alt="Wheels and Tires"><div class="cap">Wheels and Tires<span>Dressed and shining</span></div></div>
+      <div class="gtile"><img loading="lazy" src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80&auto=format&fit=crop" alt="Interior Reset"><div class="cap">Interior Reset<span>Like-new cabin</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="book" id="book"><div class="wrap"><div class="grid">
+  <div>
+    <div class="head" style="text-align:left;margin:0"><div class="k">Book Now</div><h2>Let's make it gleam.</h2></div>
+    <p>Tell us your vehicle and what you're after — we'll confirm a time, mobile or at the shop.</p>
+    <a href="tel:6364980038" class="phone">(636) 498-0038</a>
+    <p style="margin-top:.4rem">Wentzville &amp; St. Charles County, MO</p>
+  </div>
+  <form name="booking" method="POST" data-netlify="true" id="bk">
+    <input type="hidden" name="form-name" value="booking">
+    <div class="fg"><label for="n">Name</label><input id="n" name="name" required placeholder="Your name"></div>
+    <div class="fg"><label for="p">Phone</label><input id="p" name="phone" type="tel" required placeholder="(636) 000-0000"></div>
+    <div class="fg"><label for="v">Vehicle</label><input id="v" name="vehicle" placeholder="Year / Make / Model"></div>
+    <div class="fg"><label for="s">Package</label><select id="s" name="package" required><option value="" disabled selected>Choose one</option><option>Express Shine</option><option>Full Detail</option><option>Interior Only</option><option>Paint Correction</option><option>Ceramic Coating</option><option>Mobile — Come to me</option></select></div>
+    <button type="submit" class="btn btn-b">Request My Detail</button>
+  </form>
+  <div class="done" id="done"><h2 class="saira" style="color:var(--blue)">Booked! 🚗</h2><p>We'll call you at (636) 498-0038 to lock in a time.</p></div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="logo">JOHN'S<b>·</b>AUTO DETAIL</div>
+  <div>© 2026 · Wentzville &amp; St. Charles, MO · <a href="tel:6364980038" style="color:var(--blue)">(636) 498-0038</a></div>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// Cinematic studio: a glossy detailed car turning on a reflective floor under a key light
+(function(){
+  if(!window.THREE)return;
+  var canvas=document.getElementById('carCanvas');if(!canvas)return;
+  function size(){return {w:window.innerWidth,h:window.innerHeight}}
+  var d=size();
+  var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,1.6));renderer.setSize(d.w,d.h,false);
+  renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+  if('outputColorSpace' in renderer)renderer.outputColorSpace=THREE.SRGBColorSpace;
+  renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
+  var scene=new THREE.Scene();
+  var cam=new THREE.PerspectiveCamera(38,d.w/d.h,0.1,200);cam.position.set(7,3.4,9);cam.lookAt(0,0.7,0);
+  // studio env (bright softboxes over dark) for glossy paint + chrome
+  (function(){var c=document.createElement('canvas');c.width=32;c.height=128;var g=c.getContext('2d');var gr=g.createLinearGradient(0,0,0,128);gr.addColorStop(0,'#1a2330');gr.addColorStop(.4,'#0a0c10');gr.addColorStop(.5,'#cfd8e4');gr.addColorStop(.6,'#0a0c10');gr.addColorStop(1,'#05070a');g.fillStyle=gr;g.fillRect(0,0,32,128);g.fillStyle='rgba(120,180,255,0.6)';g.fillRect(0,46,32,8);var tex=new THREE.CanvasTexture(c);tex.mapping=THREE.EquirectangularReflectionMapping;var pm=new THREE.PMREMGenerator(renderer);scene.environment=pm.fromEquirectangular(tex).texture;tex.dispose();pm.dispose();})();
+  scene.add(new THREE.AmbientLight(0x33425a,0.5));
+  var key=new THREE.DirectionalLight(0xffffff,1.7);key.position.set(-6,10,7);key.castShadow=true;key.shadow.mapSize.set(1024,1024);key.shadow.camera.left=-9;key.shadow.camera.right=9;key.shadow.camera.top=9;key.shadow.camera.bottom=-9;key.shadow.bias=-0.0006;scene.add(key);
+  var blue=new THREE.PointLight(0x2f9bff,1.6,60);blue.position.set(7,3,-4);scene.add(blue);
+  var rim=new THREE.DirectionalLight(0xbfe0ff,0.7);rim.position.set(4,2,-8);scene.add(rim);
+
+  // reflective showroom floor
+  var floor=new THREE.Mesh(new THREE.CircleGeometry(20,64),new THREE.MeshStandardMaterial({color:0x0c0f15,roughness:0.22,metalness:0.55,envMapIntensity:1.1}));
+  floor.rotation.x=-Math.PI/2;floor.position.y=0;floor.receiveShadow=true;scene.add(floor);
+
+  // ---- CAR ----
+  var paint=new THREE.MeshPhysicalMaterial({color:0x1f6fff,metalness:0.55,roughness:0.18,clearcoat:1,clearcoatRoughness:0.05,envMapIntensity:1.7});
+  var glass=new THREE.MeshPhysicalMaterial({color:0x0a0f16,metalness:0.5,roughness:0.05,transparent:true,opacity:0.55,clearcoat:1,envMapIntensity:1.6});
+  var tire=new THREE.MeshStandardMaterial({color:0x131519,roughness:0.7,metalness:0.2});
+  var chrome=new THREE.MeshStandardMaterial({color:0xd6dde6,roughness:0.12,metalness:1,envMapIntensity:2});
+  var car=new THREE.Group();
+  car.add(mesh(new THREE.BoxGeometry(6.2,1.05,2.5,6,2,3),paint,0,0.95,true));
+  car.add(mesh(new THREE.BoxGeometry(6.4,0.65,2.6,6,1,3),paint,0,1.48,true));
+  var cabin=mesh(new THREE.BoxGeometry(3.0,1.0,2.15,4,2,2),paint,-0.3,2.2,true);car.add(cabin);
+  car.add(mesh(new THREE.BoxGeometry(3.06,0.8,2.2),glass,-0.3,2.22,false));
+  car.add(mesh(new THREE.BoxGeometry(1.7,0.5,2.45),paint,2.45,1.75,true));
+  function wheel(x,z){var g=new THREE.Group();var t=new THREE.Mesh(new THREE.CylinderGeometry(0.62,0.62,0.44,28),tire);t.rotation.x=Math.PI/2;t.castShadow=true;g.add(t);var h=new THREE.Mesh(new THREE.CylinderGeometry(0.35,0.35,0.46,8),chrome);h.rotation.x=Math.PI/2;g.add(h);g.position.set(x,0.62,z);return g;}
+  car.add(wheel(2.0,1.2));car.add(wheel(2.0,-1.2));car.add(wheel(-2.0,1.2));car.add(wheel(-2.0,-1.2));
+  var hl=new THREE.MeshStandardMaterial({color:0xffffff,emissive:0xeaf4ff,emissiveIntensity:1.3});
+  car.add(mesh(new THREE.SphereGeometry(0.22,16,12),hl,3.25,1.35,false,0.82));car.add(mesh(new THREE.SphereGeometry(0.22,16,12),hl,3.25,1.35,false,-0.82));
+  var tl=new THREE.MeshStandardMaterial({color:0x2a0000,emissive:0xff2a2a,emissiveIntensity:1});
+  car.add(mesh(new THREE.BoxGeometry(0.12,0.3,0.5),tl,-3.18,1.4,false,0.85));car.add(mesh(new THREE.BoxGeometry(0.12,0.3,0.5),tl,-3.18,1.4,false,-0.85));
+  function mesh(geo,mat,x,y,sh,z){var m=new THREE.Mesh(geo,mat);m.position.set(x||0,y||0,z||0);if(sh)m.castShadow=true;return m;}
+  car.position.y=0.05;scene.add(car);
+
+  var t0=performance.now();
+  addEventListener('resize',function(){var z=size();renderer.setSize(z.w,z.h,false);cam.aspect=z.w/z.h;cam.updateProjectionMatrix();},{passive:true});
+  var __v=true;if('IntersectionObserver' in window){new IntersectionObserver(function(e){__v=e[0].isIntersecting;},{threshold:0.01}).observe(renderer.domElement);}
+  (function loop(){requestAnimationFrame(loop);if(!__v)return;var t=(performance.now()-t0)/1000;car.rotation.y=t*0.28;renderer.render(scene,cam);})();
+})();
+(function(){var f=document.getElementById('bk');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).catch(function(){});f.style.display='none';document.getElementById('done').style.display='block';});})();
+</script>
+
+<style>
+.fx-bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:9999;background:#2f9bff;box-shadow:0 0 8px #2f9bff}
+.rise{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rise.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;transition:none}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+window.addEventListener('load',function(){
+  var hasG=window.gsap&&window.ScrollTrigger;
+  if(hasG)gsap.registerPlugin(ScrollTrigger);
+  var bar=document.createElement('div');bar.className='fx-bar';document.body.appendChild(bar);
+  var lenis=null;
+  if(window.Lenis){
+    lenis=new Lenis({lerp:0.1,smoothWheel:true,smoothTouch:false,wheelMultiplier:1});window.__lenis=lenis;
+    if(hasG){lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0);}
+    else{(function r(t){lenis.raf(t);requestAnimationFrame(r);})();}
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){var t=document.querySelector(id);if(t){e.preventDefault();lenis.scrollTo(t,{offset:-66,duration:1.1});}}});});
+  }
+  var tk=false;
+  function prog(){tk=false;var d=document.documentElement;var p=d.scrollTop/((d.scrollHeight-window.innerHeight)||1);bar.style.width=(Math.max(0,Math.min(1,p))*100)+'%';}
+  function onScroll(){if(!tk){tk=true;requestAnimationFrame(prog);}}
+  if(lenis)lenis.on('scroll',onScroll);else window.addEventListener('scroll',onScroll,{passive:true});
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:0.1,rootMargin:'0px 0px -6% 0px'}):null;
+  var sel='.svc,.pkg,.rev,.mrow,.srow,.step,.head,.sec-head,.trust .it,.statline>*,.hours,.addrbox,.menu,.medallion,.pkg-grid>*,.svc-grid>*,.rev-grid>*,.about .grid>*,.book .grid>*,.hero h1,.hero .tag,.hero p,.hero-inner p';
+  document.querySelectorAll(sel).forEach(function(el,i){el.classList.add('rise');el.style.transitionDelay=((i%5)*55)+'ms';if(io)io.observe(el);else el.classList.add('in');});
+  setTimeout(function(){document.querySelectorAll('.rise:not(.in)').forEach(function(e){if(e.getBoundingClientRect().top<window.innerHeight)e.classList.add('in');});},300);
+  setTimeout(function(){document.querySelectorAll('.rise:not(.in)').forEach(function(e){e.classList.add('in');});},2800);
+  if(hasG){
+    var track=document.querySelector('.gallery-track'),sec=document.querySelector('.gallery');
+    if(track&&sec&&window.innerWidth>860){
+      var amt=function(){return Math.max(0,track.scrollWidth-window.innerWidth+44);};
+      gsap.to(track,{x:function(){return -amt();},ease:'none',scrollTrigger:{trigger:sec,start:'top top',end:function(){return '+='+amt();},scrub:0.5,pin:'.gallery-pin',anticipatePin:1,invalidateOnRefresh:true}});
+      setTimeout(function(){ScrollTrigger.refresh();},450);
+    }
+  }
+});
+</script>
+
+</body>
+</html>
