@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ajakaiye23.github.io/johns-auto-detail-stl/sitemap.xml
